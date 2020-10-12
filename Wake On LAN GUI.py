@@ -33,4 +33,5 @@ print(magic_packet)
 
 send_magic_packet(magic_packet)
 
+#test
 print('Magic Packet Sent')
