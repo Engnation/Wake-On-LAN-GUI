@@ -1,6 +1,6 @@
 #from tkinter import *
 from tkinter import Tk, Label, Frame, BOTTOM, LEFT, Button #base class for tkinter
-from wakeonlan import send_magic_packet
+from wakeonlan import BROADCAST_IP, send_magic_packet
 
 root = Tk()
 
@@ -26,11 +26,14 @@ root.mainloop() #runs the window event loop so the window stays open
 
 #Send magic packet to wake up target machine
 
-target = open("Target_MAC","r")
-magic_packet = str(target.read()) 
-print(type(magic_packet))
-print(magic_packet)
+target_1 = open("Target_MAC","r")
+target_2 = open("Target_IP","r")
+mac_address = str(target_1.read())
+ip_address = str(target_2.read())
 
-send_magic_packet(magic_packet)
+#print(type(magic_packet))
+print(mac_address)
+
+send_magic_packet(mac_address,ip_address = ip_address,port=7)
 
 print('Magic Packet Sent')
