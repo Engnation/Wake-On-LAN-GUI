@@ -1,1 +1,7 @@
 *Target_MAC
+*Target_IP
+*\build
+*.spec
+*.exe
+*settings.json
+*.pyc
